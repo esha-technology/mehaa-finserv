@@ -75,26 +75,12 @@ const NavBar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
             <NavLink href="/">Home</NavLink>
+            <NavLink href="/services">Loans</NavLink>
             <NavLink href="/about">About Us</NavLink>
-            <NavLink href="/services">Services</NavLink>
-            <NavLink href="/blog">Blog</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
+        
+            <NavLink href="/contact">Contact us</NavLink>
 
-            {/* CTA Buttons */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="ml-4 px-4 py-2 rounded-lg bg-indigo-500 text-white hover:bg-indigo-600 transition-colors duration-300"
-            >
-              Register
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 rounded-lg border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-50 transition-colors duration-300"
-            >
-              Contact Us
-            </motion.button>
+            
           </div>
 
           {/* Mobile Menu Button */}
