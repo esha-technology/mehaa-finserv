@@ -66,7 +66,7 @@ const services: Service[] = [
   },  
 ];
 
-const LoansPage: React.FC = () => {
+const Loansection: React.FC = () => {
   const colors = [
     "bg-orange-100",
     "bg-blue-100",
@@ -108,4 +108,4 @@ const LoansPage: React.FC = () => {
 };
 
 
-export default LoansPage;
+export default Loansection;
