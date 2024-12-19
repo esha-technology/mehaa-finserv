@@ -1,0 +1,121 @@
+/* General form styling */
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #2e7d32; /* Green color */
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* To position error message */
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #000000; /* Black color */
+    margin-bottom: 0.5rem;
+  }
+  
+  input,
+  textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #c1f5ab;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #388e3c; /* Green border on focus */
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  /* Submit button styling */
+  button {
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #388e3c; /* Green background */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2e7d32; /* Darker green on hover */
+  }
+  
+  button:active {
+    background-color: #1b5e20; /* Even darker green on active */
+  }
+  
+  /* Real-time error message styling */
+  .error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    padding-left: 0.25rem;
+    /* Removed absolute positioning for better alignment */
+  }
+  
+  /* Optional: Making inputs and button full-width for better mobile responsiveness */
+  input,
+  textarea,
+  button {
+    width: 100%;
+  }
+  
+  .location {
+    display: flex;
+    justify-content: space-between;
+    gap: 4%; /* Optional space between the country and city fields */
+  }
+  
+  .location-country,
+  .location-city {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Optional: Responsive Design */
+  @media (max-width: 600px) {
+    .contact-form-container {
+      padding: 1.5rem;
+    }
+  
+    /* Adjust the layout for smaller screens */
+    .location {
+      flex-direction: column;
+      gap: 1rem; /* Space between country and city */
+    }
+  
+    .location-country,
+    .location-city {
+      width: 100%;
+    }
+  }

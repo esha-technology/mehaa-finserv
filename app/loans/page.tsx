@@ -1,9 +1,7 @@
-import React from 'react'
+import Loan from "../components/Loan";
 
-const LoansPage = () => {
-  return (
-    <div>LoansPage</div>
-  )
-}
+const Loansection: React.FC = () => {
+  return <Loan />;
+};
 
-export default LoansPage
+export default Loansection;
