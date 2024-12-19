@@ -9,20 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "framer-motion": "^11.14.2",
-=======
->>>>>>> 8a1b1c5f3f98111e6fc2a1fcc3552e41b7cb46ea
     "lucide-react": "^0.468.0",
     "next": "15.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
-<<<<<<< HEAD
+    "react-phone-number-input": "^3.4.10",
     "swiper": "^11.1.14"
-=======
-    "swiper": "^11.1.15"
->>>>>>> 8a1b1c5f3f98111e6fc2a1fcc3552e41b7cb46ea
   },
   "devDependencies": {
     "@types/node": "^20",

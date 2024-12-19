@@ -62,10 +62,11 @@ const NavBar: React.FC = () => {
           >
             <Link href="/" className="flex items-center">
               <Image
-                src="/finalLogo.png"
+                src="/finance logo.png"
                 alt="Company Logo"
-                width={176}
-                height={44}
+                width={200}
+                height={100}
+                
                 priority
                 className="h-8 w-auto"
               />
