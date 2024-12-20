@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Ourofferscard from "./Ourofferscard";
+import Ourofferscard from "./ReviewCards";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -14,7 +14,7 @@ interface Review {
   profileImg: string;
 }
 
-const Ouroffers: React.FC = () => {
+const Reviews: React.FC = () => {
   // Define the reviews array with proper type
   const reviews: Review[] = [
     {
@@ -117,4 +117,4 @@ const Ouroffers: React.FC = () => {
   );
 };
 
-export default Ouroffers;
+export default Reviews;

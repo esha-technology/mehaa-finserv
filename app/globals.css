@@ -78,3 +78,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+#hoverAnimation:hover {
+  scale: 1.05;
+  transition-duration: 300ms;
+  box-shadow: 0px 0px 15px 0px lightgrey; ;
+}

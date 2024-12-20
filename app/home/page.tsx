@@ -5,20 +5,18 @@ import Footer from "../components/common/Footer";
 import NavBar from "../components/common/Navbar";
 import ContactUsForm from "../components/ContactUsForm";
 import Loan from "../components/Loan";
-import Ouroffers from "../components/Ouroffers";
-import OurServices from "../OurServices";
-
+import Ouroffers from "../components/Reviews";
 const DashboardPage = () => {
   return (
     <div>
       <NavBar />
-      <OurServices />
       <Loan />
-      <AboutComponent/>
+      <AboutComponent />
       <Ouroffers />
-      <ContactUsForm/>
-      <Footer/>
-</div>
+      <ContactUsForm />
+      <br></br>
+      <Footer />
+    </div>
   );
 };
 export default DashboardPage;
