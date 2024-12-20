@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useEffect } from "react";
 import { TbExternalLink } from "react-icons/tb";
 import { motion } from "framer-motion";
@@ -9,7 +10,6 @@ import { BsMortarboardFill } from "react-icons/bs";
 import { HiOutlineDocumentCurrencyRupee } from "react-icons/hi2";
 import { ReactNode } from "react";
 import WhyUseCard from "./common/WhyUseCards";
-
 const Loan: React.FC = () => {
   const targetSectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -107,7 +107,7 @@ const Loan: React.FC = () => {
               id="hoverAnimation"
               className="border w-full md:w-[21%] lg:w-[20%] px-5 py-10 rounded-3xl mx-5 mb-10 flex flex-col items-center text-center shadow-lg "
             >
-              <Link href="services/web-development">
+              <Link href="loans">
                 <div className="flex flex-col justify-center items-center">
                   <div className={`p-7 rounded-md mb-6 ${service.color}`}>
                     {service.icon}
