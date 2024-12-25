@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 const LoanForm: React.FC = () => {
   return (
     <motion.div 
-      className="bg-gray-400 p-8 rounded-lg max-w-md mx-auto my-10"
+      className="bg-gray-200 py-10 px-28 rounded-3xl max-w-2xl mx-auto my-10"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <form className="space-y-4">
+      <form className="space-y-2">
         <motion.div
           className="space-y-2"
           initial={{ opacity: 0, x: -50 }}
@@ -18,8 +18,8 @@ const LoanForm: React.FC = () => {
         >
           <input
             type="text"
-            placeholder="Name"
-            className="w-full p-3 bg-blue-500 text-white rounded-lg"
+            placeholder="Fullname"
+            className="w-full p-3 bg-white-500 text-black rounded-lg"
           />
         </motion.div>
 
@@ -31,8 +31,8 @@ const LoanForm: React.FC = () => {
         >
           <input
             type="text"
-            placeholder="Ph number"
-            className="w-full p-3 bg-blue-500 text-white rounded-lg"
+            placeholder="Ph-number"
+            className="w-full p-3 bg-white-500 text-balck rounded-lg"
           />
         </motion.div>
 
@@ -45,7 +45,7 @@ const LoanForm: React.FC = () => {
           <input
             type="text"
             placeholder="State"
-            className="w-full p-3 bg-blue-500 text-white rounded-lg"
+            className="w-full p-3 bg-white-500 text-balck rounded-lg"
           />
         </motion.div>
 
@@ -58,7 +58,7 @@ const LoanForm: React.FC = () => {
           <input
             type="text"
             placeholder="Pan number"
-            className="w-full p-3 bg-blue-500 text-white rounded-lg"
+            className="w-1/2 p-3 bg-white-500 text-balck rounded-lg"
           />
         </motion.div>
 
@@ -69,9 +69,9 @@ const LoanForm: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <input
-            type="text"
+            type="file"
             placeholder="Enter pancard"
-            className="w-full p-3 bg-blue-500 text-white rounded-lg"
+            className="w-full p-3 bg-white-500 text-grey rounded-lg"
           />
         </motion.div>
 
@@ -83,7 +83,7 @@ const LoanForm: React.FC = () => {
         >
           <button
             type="submit"
-            className="bg-blue-600 text-white py-3 px-6 rounded-lg"
+            className="bg-blue-600 text-white font-medium py-3 px-6 rounded-lg"
           >
             Submit
           </button>
