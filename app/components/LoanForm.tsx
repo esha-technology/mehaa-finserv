@@ -20,7 +20,7 @@ const LoanForm: React.FC = () => {
 
   const validateForm = () => {
     const newErrors = { fullname: '', phoneNumber: '', state: '', panNumber: '', panFile: '' };
-    if (formData.fullname.length < 5) newErrors.fullname = 'Name should be at least 5 characters';
+    if (formData.fullname.length < 6) newErrors.fullname = 'Name should be at least 6 characters';
     if (!/^\d{10}$/.test(formData.phoneNumber)) newErrors.phoneNumber = 'Invalid phone number';
     if (!formData.state) newErrors.state = 'State is required';
     if (!/[A-Z]{5}[0-9]{4}[A-Z]{1}/.test(formData.panNumber)) newErrors.panNumber = 'Invalid PAN number';
@@ -52,7 +52,7 @@ const LoanForm: React.FC = () => {
 
   return (
     <motion.div
-      className="bg-gray-200 py-8 px-8 rounded-3xl max-w-2xl mx-auto my-10"
+      className="bg-gray-200 py-8 px-4 sm:px-8 rounded-3xl max-w-2xl mx-auto my-10"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -69,14 +69,14 @@ const LoanForm: React.FC = () => {
           </div>
         </motion.div>
       )}
-      <h2 className="text-center text-2xl font-bold mb-5">Loan Form</h2>
+      <h2 className="text-center text-3xl font-bold mb-5">Loan Form</h2>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <motion.div
           className="space-y-1"
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          {...(errors.fullname && { animate: shakingAnimation })}
+          {...(errors.fullname && { animate: shakingAnimation })} // Apply shaking animation only on error
         >
           <label className="block text-lg font-medium">Full Name</label>
           <input
@@ -85,14 +85,14 @@ const LoanForm: React.FC = () => {
             placeholder="Fullname"
             value={formData.fullname}
             onChange={handleChange}
-            className={`w-full p-2 bg-white-500 text-black rounded-lg ${errors.fullname ? 'border-red-500 border' : ''}`}
+            className={`w-full border p-2 bg-white text-black rounded-lg ${errors.fullname ? 'border-red-500 bg-red-100' : 'border-green-600'}`}
           />
           {errors.fullname && <p className="text-red-500">{errors.fullname}</p>}
         </motion.div>
 
         <motion.div
           className="space-y-1"
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           {...(errors.phoneNumber && { animate: shakingAnimation })}
@@ -104,14 +104,14 @@ const LoanForm: React.FC = () => {
             placeholder="Phone Number"
             value={formData.phoneNumber}
             onChange={handleChange}
-            className={`w-full p-2 bg-white-500 text-black rounded-lg ${errors.phoneNumber ? 'border-red-500 border' : ''}`}
+            className={`w-full border p-2 bg-white text-black rounded-lg ${errors.phoneNumber ? 'border-red-500 bg-red-100' : 'border-green-600'}`}
           />
           {errors.phoneNumber && <p className="text-red-500">{errors.phoneNumber}</p>}
         </motion.div>
 
         <motion.div
           className="space-y-1"
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           {...(errors.state && { animate: shakingAnimation })}
@@ -123,15 +123,15 @@ const LoanForm: React.FC = () => {
             placeholder="State"
             value={formData.state}
             onChange={handleChange}
-            className={`w-full p-2 bg-white-500 text-black rounded-lg ${errors.state ? 'border-red-500 border' : ''}`}
+            className={`w-full border p-2 bg-white text-black rounded-lg ${errors.state ? 'border-red-500 bg-red-100' : 'border-green-600'}`}
           />
           {errors.state && <p className="text-red-500">{errors.state}</p>}
         </motion.div>
 
-        <motion.div className="flex space-x-4">
+        <motion.div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <motion.div
-            className="space-y-1 w-1/2"
-            initial={{ opacity: 0, x: -50 }}
+            className="space-y-1 w-full sm:w-1/2"
+            initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             {...(errors.panNumber && { animate: shakingAnimation })}
@@ -143,14 +143,14 @@ const LoanForm: React.FC = () => {
               placeholder="PAN Number"
               value={formData.panNumber}
               onChange={handleChange}
-              className={`w-full p-2 bg-white-500 text-black rounded-lg ${errors.panNumber ? 'border-red-500 border' : ''}`}
+              className={`w-full border p-2 bg-white text-black rounded-lg ${errors.panNumber ? 'border-red-500 bg-red-100' : 'border-green-600'}`}
             />
             {errors.panNumber && <p className="text-red-500">{errors.panNumber}</p>}
           </motion.div>
 
           <motion.div
-            className="space-y-1 w-1/2"
-            initial={{ opacity: 0, x: -50 }}
+            className="space-y-1 w-full sm:w-1/2"
+            initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             {...(errors.panFile && { animate: shakingAnimation })}
@@ -160,7 +160,7 @@ const LoanForm: React.FC = () => {
               type="file"
               name="panFile"
               onChange={handleChange}
-              className={`w-full p-2 bg-white-500 text-grey rounded-lg ${errors.panFile ? 'border-red-500 border' : ''}`}
+              className={`w-full border p-2 bg-white text-grey rounded-lg ${errors.panFile ? 'border-red-500 bg-red-100' : 'border-green-600'}`}
             />
             {errors.panFile && <p className="text-red-500">{errors.panFile}</p>}
           </motion.div>
@@ -168,7 +168,7 @@ const LoanForm: React.FC = () => {
 
         <motion.div
           className="text-center"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 1, y: 50 }} // Keep opacity at 1 here
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >

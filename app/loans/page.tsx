@@ -1,3 +1,4 @@
+"use client"
 import NavBar from "../components/common/Navbar";
 import Loan from "../components/Loan";
 import LoanForm from "../components/LoanForm";

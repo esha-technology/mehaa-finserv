@@ -62,13 +62,13 @@ const NavBar: React.FC = () => {
           >
             <Link href="/" className="flex items-center">
               <Image
-                src="/finance logo.png"
+                src="/finance logo.jpg"
                 alt="Company Logo"
-                width={200}
+                width={400}
                 height={100}
                 
                 priority
-                className="h-8 w-auto"
+                className="h-16 w-auto bg-white"
               />
             </Link>
           </motion.div>
