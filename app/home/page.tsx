@@ -12,7 +12,6 @@ const DashboardPage = () => {
     <div>
       <NavBar />
       <Loan />
-      <LoanForm/>
       <AboutComponent />
       <Ouroffers />
       <ContactUsForm />
