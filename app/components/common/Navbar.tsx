@@ -76,7 +76,7 @@ const NavBar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
             <NavLink href="/">Home</NavLink>
-            <NavLink href="/services">Loans</NavLink>
+            <NavLink href="/loans">Loans</NavLink>
             <NavLink href="/about">About Us</NavLink>
         
             <NavLink href="/contact">Contact us</NavLink>
