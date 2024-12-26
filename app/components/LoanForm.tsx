@@ -29,16 +29,44 @@ const LoanForm: React.FC = () => {
     return Object.values(newErrors).every(error => error === '');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Form Submitted!");
+  
     if (validateForm()) {
-      setShowPopup(true);
-      setTimeout(() => {
-        setShowPopup(false);
-        window.location.href = '/'; // Redirect to home page
-      }, 3000);
+      const formDataToSend = new FormData();  // Use FormData to include files
+  
+      formDataToSend.append('fullname', formData.fullname);
+      formDataToSend.append('phoneNumber', formData.phoneNumber);
+      formDataToSend.append('state', formData.state);
+      formDataToSend.append('panNumber', formData.panNumber);
+      if (formData.panFile) {
+        formDataToSend.append('panFile', formData.panFile);  // Add PAN card file here
+      }
+  
+      try {
+        const response = await fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+          method: 'POST',
+          body: formDataToSend,  // Use FormData as the body
+        });
+  
+        const data = await response.json();
+        if (data.result === 'Success') {
+          setShowPopup(true);
+          setTimeout(() => {
+            setShowPopup(false);
+            window.location.href = '/';  // Redirect after a delay
+          }, 3000);
+        } else {
+          alert('There was an error submitting the form.');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
     }
   };
+  
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, files } = e.target;
@@ -148,22 +176,6 @@ const LoanForm: React.FC = () => {
             {errors.panNumber && <p className="text-red-500">{errors.panNumber}</p>}
           </motion.div>
 
-          <motion.div
-            className="space-y-1 w-full sm:w-1/2"
-            initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            {...(errors.panFile && { animate: shakingAnimation })}
-          >
-            <label className="block text-lg font-medium">Upload PAN File</label>
-            <input
-              type="file"
-              name="panFile"
-              onChange={handleChange}
-              className={`w-full border p-2 bg-white text-grey rounded-lg ${errors.panFile ? 'border-red-500 bg-red-100' : 'border-green-600'}`}
-            />
-            {errors.panFile && <p className="text-red-500">{errors.panFile}</p>}
-          </motion.div>
         </motion.div>
 
         <motion.div

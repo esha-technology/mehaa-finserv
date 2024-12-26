@@ -7,12 +7,14 @@ import ContactUsForm from "../components/ContactUsForm";
 import Loan from "../components/Loan";
 import LoanForm from "../components/LoanForm";
 import Ouroffers from "../components/Reviews";
+import Whyus from "../components/Whyus";
 const DashboardPage = () => {
   return (
     <div>
       <NavBar />
       <Loan />
       <AboutComponent />
+      <Whyus/>
       <Ouroffers />
       <ContactUsForm />
       <br></br>
