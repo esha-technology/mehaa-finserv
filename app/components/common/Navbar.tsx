@@ -1,4 +1,4 @@
-// NavBar.tsx
+"use client"
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -62,12 +62,13 @@ const NavBar: React.FC = () => {
           >
             <Link href="/" className="flex items-center">
               <Image
-                src="/finalLogo.png"
+                src="/finance logo.jpg"
                 alt="Company Logo"
-                width={176}
-                height={44}
+                width={400}
+                height={100}
+                
                 priority
-                className="h-8 w-auto"
+                className="h-16 w-auto bg-white"
               />
             </Link>
           </motion.div>

@@ -1,9 +1,15 @@
-import React from 'react'
-
-const LoansPage = () => {
+"use client"
+import NavBar from "../components/common/Navbar";
+import Loan from "../components/Loan";
+import LoanForm from "../components/LoanForm";
+const Loansection: React.FC = () => {
   return (
-    <div>LoansPage</div>
-  )
-}
+    <div>
+      <NavBar/>
+      <Loan/>
+      <LoanForm/>
+      </div>
+  );
+};
 
-export default LoansPage
+export default Loansection;

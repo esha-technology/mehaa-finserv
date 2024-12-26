@@ -1,14 +1,23 @@
-"use client"
+"use client";
 
-import NavBar from '../components/common/Navbar';
-
-
-
+import AboutComponent from "../components/common/AboutComponent";
+import Footer from "../components/common/Footer";
+import NavBar from "../components/common/Navbar";
+import ContactUsForm from "../components/ContactUsForm";
+import Loan from "../components/Loan";
+import LoanForm from "../components/LoanForm";
+import Ouroffers from "../components/Reviews";
 const DashboardPage = () => {
   return (
-      <div>
-          <NavBar/>
+    <div>
+      <NavBar />
+      <Loan />
+      <AboutComponent />
+      <Ouroffers />
+      <ContactUsForm />
+      <br></br>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 export default DashboardPage;
