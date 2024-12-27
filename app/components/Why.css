@@ -1,0 +1,107 @@
+/* Why.css */
+.why-us-container {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .why-us-heading {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    background-color: #9111b4;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card .card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff6f61, #d64e12); /* Default gradient */
+  }
+  
+  /* Custom background gradient for each icon */
+  .card:nth-of-type(1) .card-icon {
+    background: linear-gradient(
+      45deg,
+      #ff6f61,
+      #ff7c7c
+    ); /* Trusted Loan Partner */
+  }
+  
+  .card:nth-of-type(2) .card-icon {
+    background: linear-gradient(
+      45deg,
+      #ffcc00,
+      #ffb74d
+    ); /* Quick Loan Approval */
+  }
+  
+  .card:nth-of-type(3) .card-icon {
+    background: linear-gradient(
+      45deg,
+      #4caf50,
+      #81c784
+    ); /* Transparent Loan Terms */
+  }
+  
+  .card:nth-of-type(4) .card-icon {
+    background: linear-gradient(
+      45deg,
+      #2196f3,
+      #64b5f6
+    ); /* Personalized Loan Offers */
+  }
+  
+  .card:nth-of-type(5) .card-icon {
+    background: linear-gradient(
+      45deg,
+      #9c27b0,
+      #e1bee7
+    ); /* Flexible Repayment Options */
+  }
+  
+  .card:nth-of-type(6) .card-icon {
+    background: linear-gradient(
+      45deg,
+      #03a9f4,
+      #80deea
+    ); /* Expert Financial Guidance */
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0;
+  }
