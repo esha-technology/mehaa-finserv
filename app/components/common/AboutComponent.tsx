@@ -1,5 +1,4 @@
 import React from "react";
-import { GoArrowUpRight } from "react-icons/go";
 import Heading from "./Heading";
 
 const AboutComponent: React.FC = () => {

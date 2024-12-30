@@ -98,7 +98,7 @@ const Reviews: React.FC = () => {
           {visibleReviews < reviews.length && (
             <button
               onClick={showMore}
-              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+              className="mt-4 bg-green-500 text-white px-4 py-2 rounded"
             >
               Show More
             </button>
@@ -106,7 +106,7 @@ const Reviews: React.FC = () => {
           {visibleReviews > 3 && (
             <button
               onClick={showLess}
-              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+              className="mt-4 bg-green-700 text-white px-4 py-2 rounded"
             >
               Show Less
             </button>

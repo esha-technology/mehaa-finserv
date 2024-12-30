@@ -7,72 +7,66 @@ const LoanForm: React.FC = () => {
     phoneNumber: '',
     state: '',
     panNumber: '',
-    panFile: null,
   });
   const [errors, setErrors] = useState({
     fullname: '',
     phoneNumber: '',
     state: '',
     panNumber: '',
-    panFile: '',
   });
   const [showPopup, setShowPopup] = useState(false);
 
   const validateForm = () => {
-    const newErrors = { fullname: '', phoneNumber: '', state: '', panNumber: '', panFile: '' };
+    const newErrors = { fullname: '', phoneNumber: '', state: '', panNumber: '' };
     if (formData.fullname.length < 6) newErrors.fullname = 'Name should be at least 6 characters';
     if (!/^\d{10}$/.test(formData.phoneNumber)) newErrors.phoneNumber = 'Invalid phone number';
     if (!formData.state) newErrors.state = 'State is required';
     if (!/[A-Z]{5}[0-9]{4}[A-Z]{1}/.test(formData.panNumber)) newErrors.panNumber = 'Invalid PAN number';
-    if (!formData.panFile) newErrors.panFile = 'PAN file is required';
     setErrors(newErrors);
     return Object.values(newErrors).every(error => error === '');
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form Submitted!");
-  
-    if (validateForm()) {
-      const formDataToSend = new FormData();  // Use FormData to include files
-  
-      formDataToSend.append('fullname', formData.fullname);
-      formDataToSend.append('phoneNumber', formData.phoneNumber);
-      formDataToSend.append('state', formData.state);
-      formDataToSend.append('panNumber', formData.panNumber);
-      if (formData.panFile) {
-        formDataToSend.append('panFile', formData.panFile);  // Add PAN card file here
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (validateForm()) {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyn6BQEOYY24SrCn4UOf9GnvzZj5JU8IYeXkHh258_YDkG2h0ykrEcgIsA4D72PaJHixA/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
-      try {
-        const response = await fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
-          method: 'POST',
-          body: formDataToSend,  // Use FormData as the body
-        });
-  
-        const data = await response.json();
-        if (data.result === 'Success') {
-          setShowPopup(true);
-          setTimeout(() => {
-            setShowPopup(false);
-            window.location.href = '/';  // Redirect after a delay
-          }, 3000);
-        } else {
-          alert('There was an error submitting the form.');
-        }
-      } catch (error) {
-        console.error('Error submitting form:', error);
+
+      const data = await response.json();
+
+      if (data.result === 'Success') {
+        setShowPopup(true);
+        setTimeout(() => {
+          setShowPopup(false);
+          window.location.href = '/';
+        }, 3000);
+      } else {
+        alert('There was an error submitting the form.');
       }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An unexpected error occurred. Please try again later.');
     }
-  };
-  
-  
+  }
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, files } = e.target;
+    const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
-      [name]: files ? files[0] : value,
+      [name]: value,
     }));
   };
 
@@ -101,10 +95,10 @@ const LoanForm: React.FC = () => {
       <form className="space-y-4" onSubmit={handleSubmit}>
         <motion.div
           className="space-y-1"
-          initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
+          initial={{ opacity: 1, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          {...(errors.fullname && { animate: shakingAnimation })} // Apply shaking animation only on error
+          {...(errors.fullname && { animate: shakingAnimation })}
         >
           <label className="block text-lg font-medium">Full Name</label>
           <input
@@ -120,7 +114,7 @@ const LoanForm: React.FC = () => {
 
         <motion.div
           className="space-y-1"
-          initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
+          initial={{ opacity: 1, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           {...(errors.phoneNumber && { animate: shakingAnimation })}
@@ -139,7 +133,7 @@ const LoanForm: React.FC = () => {
 
         <motion.div
           className="space-y-1"
-          initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
+          initial={{ opacity: 1, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           {...(errors.state && { animate: shakingAnimation })}
@@ -156,31 +150,28 @@ const LoanForm: React.FC = () => {
           {errors.state && <p className="text-red-500">{errors.state}</p>}
         </motion.div>
 
-        <motion.div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <motion.div
-            className="space-y-1 w-full sm:w-1/2"
-            initial={{ opacity: 1, x: -50 }} // Keep opacity at 1 here
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            {...(errors.panNumber && { animate: shakingAnimation })}
-          >
-            <label className="block text-lg font-medium">PAN Number</label>
-            <input
-              type="text"
-              name="panNumber"
-              placeholder="PAN Number"
-              value={formData.panNumber}
-              onChange={handleChange}
-              className={`w-full border p-2 bg-white text-black rounded-lg ${errors.panNumber ? 'border-red-500 bg-red-100' : 'border-green-600'}`}
-            />
-            {errors.panNumber && <p className="text-red-500">{errors.panNumber}</p>}
-          </motion.div>
-
+        <motion.div
+          className="space-y-1"
+          initial={{ opacity: 1, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          {...(errors.panNumber && { animate: shakingAnimation })}
+        >
+          <label className="block text-lg font-medium">PAN Number</label>
+          <input
+            type="text"
+            name="panNumber"
+            placeholder="PAN Number"
+            value={formData.panNumber}
+            onChange={handleChange}
+            className={`w-full border p-2 bg-white text-black rounded-lg ${errors.panNumber ? 'border-red-500 bg-red-100' : 'border-green-600'}`}
+          />
+          {errors.panNumber && <p className="text-red-500">{errors.panNumber}</p>}
         </motion.div>
 
         <motion.div
           className="text-center"
-          initial={{ opacity: 1, y: 50 }} // Keep opacity at 1 here
+          initial={{ opacity: 1, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >

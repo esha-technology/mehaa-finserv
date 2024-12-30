@@ -5,7 +5,6 @@ import Footer from "../components/common/Footer";
 import NavBar from "../components/common/Navbar";
 import ContactUsForm from "../components/ContactUsForm";
 import Loan from "../components/Loan";
-import LoanForm from "../components/LoanForm";
 import Ouroffers from "../components/Reviews";
 import Whyus from "../components/Whyus";
 const DashboardPage = () => {
@@ -17,7 +16,6 @@ const DashboardPage = () => {
       <Whyus/>
       <Ouroffers />
       <ContactUsForm />
-      <br></br>
       <Footer />
     </div>
   );

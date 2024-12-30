@@ -1,11 +1,10 @@
 import React from "react";
 import "./Footer.css"; // Importing the CSS file
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa"; // Importing the required icons
+import Image from "next/image";
 
 const Footer: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+ 
 
   // WhatsApp icon fixed at the bottom-right
   const phoneNumber = "8523811173"; // Your phone number (replace with your actual phone number)
@@ -19,9 +18,11 @@ const Footer: React.FC = () => {
           <div className="footer-left">
             {/* Logo Section */}
             <div className="footer-logo">
-              <img
+              <Image
                 src="/finance logo.jpg" // Make sure this is the correct path
                 alt="Company Logo"
+                width={400}
+                height={400}
                 className="footer-logo-img"
               />
             </div>
@@ -138,7 +139,9 @@ const Footer: React.FC = () => {
         className="fixed-whatsapp-icon"
       >
         <div className="whatsapp-icon-bg">
-          <img src="/whatsapp-icon-logo-svgrepo-com.svg" alt="WhatsApp Icon" />
+          <Image src="/whatsapp-icon-logo-svgrepo-com.svg" alt="WhatsApp Icon"
+           width={60}
+                height={60}/>
         </div>
       </a>
     </>

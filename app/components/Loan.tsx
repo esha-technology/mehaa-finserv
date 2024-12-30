@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Heading from "./common/Heading";
 import Link from "next/link";
 import { GiHouse, GiGears, GiReceiveMoney } from "react-icons/gi";
-import { FaMotorcycle, FaUserTie, FaCar } from "react-icons/fa6";
+import {  FaUserTie, FaCar } from "react-icons/fa6";
 import { BsMortarboardFill } from "react-icons/bs";
 import { HiOutlineDocumentCurrencyRupee } from "react-icons/hi2";
 
@@ -88,7 +88,7 @@ const Loan: React.FC = () => {
   ];
 
   return (
-    <div className="py-16 md:mt-5 lg:mt-16">
+    <div className="scroll-py-14 md:mt-5 lg:mt-16">
       <Heading heading="Our Loans" color="bg-sky-200" />
       <div className="container mx-auto px-5">
         <div className="flex flex-wrap justify-center gap-6 mt-20">
@@ -111,7 +111,7 @@ const Loan: React.FC = () => {
                   </h2>
                   <p className="text-base sm:text-lg mb-4">{service.details}</p>
                   <Link
-                    href={`/loans/${service.slug}`} // Update the link to point to the loan-specific page
+                    href="/loans" 
                     className="text-sky-600 font-medium hover:underline flex gap-1"
                   >
                     Read More <TbExternalLink className="mt-1" />
@@ -121,7 +121,7 @@ const Loan: React.FC = () => {
             </motion.div>
           ))}
         </div>
-      </div>
+      </div>|
     </div>
   );
 };

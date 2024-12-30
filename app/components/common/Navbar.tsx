@@ -11,10 +11,11 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
+
   return (
     <Link
       href={href}
-      className="relative group px-3 py-2 text-gray-600 hover:text-indigo-500 transition-colors duration-300"
+      className="relative group mx-3 px-1 py-2 text-gray-600 font-semibold hover:text-green-700 transition-colors block after:block after:content-[''] after:absolute after:h-[3px] after:bg-green-700 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
     >
       {children}
       <motion.span
