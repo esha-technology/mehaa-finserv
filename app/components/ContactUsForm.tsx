@@ -110,99 +110,124 @@ const ContactUs: React.FC = () => {
       </div>
 
       {/* Right Side Form Content */}
-      <div className="contact-form-container flex-1 md:w-2/3 bg-white p-4 rounded-lg shadow-lg">
-        <ToastContainer
-      position="top-right"
-      autoClose={3000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-    />
-        <h2 className="text-center text-3xl font-semibold text-green-700 mb-6">Contact Us</h2>
-        <form ref={formRef} onSubmit={handleSubmit} className="space-y-3">
+      <div className="contact-form-container max-w-4xl mx-auto md:w-2/3 bg-white p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      
+      <h2 className="text-center text-3xl font-bold text-green-700 mb-8 relative">
+        <span className="relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-green-500 after:rounded-full">
+          Contact Us
+        </span>
+      </h2>
+
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <div className="form-group">
-            <label htmlFor="name" className="text-lg">Name</label>
+            <label htmlFor="name" className="block text-gray-700 text-lg font-medium mb-2">
+              Name
+            </label>
             <input
               type="text"
               id="name"
               name="name"
-              className="input-field"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 outline-none"
               placeholder="Enter your name"
               required
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="number" className="text-lg">Phone Number</label>
+            <label htmlFor="number" className="block text-gray-700 text-lg font-medium mb-2">
+              Phone Number
+            </label>
             <PhoneInput
               international
               defaultCountry="IN"
               value={phoneNumber}
               onChange={(value) => setPhoneNumber(value || '')}
-              className="phone-input w-full"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
               placeholder="Enter your phone number"
               required
             />
           </div>
+        </div>
 
+        <div className="form-group">
+          <label htmlFor="email" className="block text-gray-700 text-lg font-medium mb-2">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 outline-none"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
           <div className="form-group">
-            <label htmlFor="email" className="text-lg">Email</label>
+            <label htmlFor="country" className="block text-gray-700 text-lg font-medium mb-2">
+              Country
+            </label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              className="input-field"
-              placeholder="Enter your email"
+              type="text"
+              id="country"
+              name="country"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 outline-none"
+              placeholder="Enter your country"
               required
             />
-          </div>
-
-          <div className="form-group flex gap-4">
-            <div className="location-country flex-1">
-              <label htmlFor="country" className="text-lg">Country</label>
-              <input
-                type="text"
-                id="country"
-                name="country"
-                className="input-field"
-                placeholder="Enter your country"
-                required
-              />
-            </div>
-            <div className="location-city flex-1">
-              <label htmlFor="city" className="text-lg">City</label>
-              <input
-                type="text"
-                id="city"
-                name="city"
-                className="input-field"
-                placeholder="Enter your city"
-                required
-              />
-            </div>
           </div>
 
           <div className="form-group">
-            <label htmlFor="message" className="text-lg">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              className="input-field"
-              placeholder="Write your message"
+            <label htmlFor="city" className="block text-gray-700 text-lg font-medium mb-2">
+              City
+            </label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 outline-none"
+              placeholder="Enter your city"
               required
             />
           </div>
+        </div>
 
-          <button type="submit" className="w-full p-3 bg-green-600 text-white rounded-md transition-all duration-300 hover:bg-green-700">
-            Submit
-          </button>
-        </form>
-      </div>
+        <div className="form-group">
+          <label htmlFor="message" className="block text-gray-700 text-lg font-medium mb-2">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 outline-none resize-none"
+            placeholder="Write your message"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full p-4 bg-green-600 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:bg-green-700 hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
     </div>
   );
 };
