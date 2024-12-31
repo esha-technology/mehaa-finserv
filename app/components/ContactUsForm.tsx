@@ -110,7 +110,7 @@ const ContactUs: React.FC = () => {
       </div>
 
       {/* Right Side Form Content */}
-      <div className="contact-form-container max-w-4xl mx-auto md:w-2/3 bg-white p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+      <div className="contact-form-container max-w-3xl mx-auto md:w-2/3 bg-white p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
       <ToastContainer
         position="top-right"
         autoClose={3000}
