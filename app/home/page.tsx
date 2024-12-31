@@ -1,5 +1,6 @@
 "use client";
 
+import CarouselBanner from "../components/CarouselBanner";
 import AboutComponent from "../components/common/AboutComponent";
 import Footer from "../components/common/Footer";
 import NavBar from "../components/common/Navbar";
@@ -11,6 +12,7 @@ const DashboardPage = () => {
   return (
     <div>
       <NavBar />
+      <CarouselBanner/>
       <Loan />
       <AboutComponent />
       <Whyus/>

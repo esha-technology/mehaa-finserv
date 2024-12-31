@@ -1,151 +1,65 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import './contactus.css'; // Custom CSS file for any specific styles not handled by Tailwind
+import React, { useRef, useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { FaEnvelope, FaPhone } from 'react-icons/fa6';
-
-// Type for form data
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-  number: string;
-  country: string;
-  city: string;
-}
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    message: '',
-    number: '',
-    country: '',
-    city: '',
-  });
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
+  const formRef = useRef<HTMLFormElement>(null);
+  
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyG7qxFarG5YYpgSjRl5EdUeZW-bmU86r4V_F93qH3RvMd2WoaZ4I92-Z8N919D-G8GUA/exec";
 
-  const [errors, setErrors] = useState<{ [key: string]: string }>({
-    name: '',
-    email: '',
-    message: '',
-    number: '',
-    country: '',
-    city: '',
-  });
-
-  // Handle input change with validation
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-    validateField(name, value);
+  const getCurrentDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
   };
 
-  // Handle phone number change for PhoneInput
-  const handlePhoneChange = (value: string | undefined) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      number: value || '', // Ensure number is either a string or empty string
-    }));
-    validateField('number', value || ''); // Ensure empty value validation
-  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    if (formRef.current) {
+      // Create a hidden input for the phone number
+      const phoneInput = document.createElement('input');
+      phoneInput.type = 'hidden';
+      phoneInput.name = 'number';
+      phoneInput.value = phoneNumber;
+      formRef.current.appendChild(phoneInput);
 
-  // Validate individual field in real-time
-  const validateField = (name: string, value: string) => {
-    let error = '';
-    if (name === 'name') {
-      if (!value) {
-        error = 'Name is required.';
-      }
-    } else if (name === 'email') {
-      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zAZ0-9.-]+\.[a-zA-Z]{2,4}$/;
-      if (!value) {
-        error = 'Email is required.';
-      } else if (!emailRegex.test(value)) {
-        error = 'Please enter a valid email.';
-      }
-    } else if (name === 'message') {
-      if (!value) {
-        error = 'Message is required.';
-      }
-    } else if (name === 'number') {
-      if (!value) {
-        error = 'Number is required.';
-      }
-    } else if (name === 'country' || name === 'city') {
-      if (!value) {
-        error = `${name.charAt(0).toUpperCase() + name.slice(1)} is required.`;
-      }
-    }
-    setErrors((prevErrors) => ({
-      ...prevErrors,
-      [name]: error,
-    }));
-  };
+      // Create a hidden input for the date
+      const dateInput = document.createElement('input');
+      dateInput.type = 'hidden';
+      dateInput.id = 'date';
+      dateInput.name = 'date';
+      dateInput.value = getCurrentDate();
+      formRef.current.appendChild(dateInput);
 
-  // Handle form submission
- const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  const isValid = validateForm();
-  const hasEmptyFields = Object.values(formData).some((field) => field === '');
-
-  if (isValid && !hasEmptyFields) {
-    try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwStM7ytIGH6BUkTYScRdI1psOruc-28C7tr4WieISD0jgDM91kfhH-KAEsfqU90sf9/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      fetch(scriptURL, { 
+        method: "POST", 
+        body: new FormData(formRef.current)
+      })
+.then(() => {
+        toast.success("Thank you! Your form has been submitted successfully.");
+        formRef.current?.reset(); // Optional: reset the form
+        setPhoneNumber(''); // Clear phone number state
+      })
+      .catch((error) => {
+        toast.error("Error! Something went wrong. Please try again.");
+        console.error("Error!", error.message);
       });
 
-      const result = await response.json();
-      if (result.status === "success") {
-        alert("Form submitted successfully!");
-        setFormData({
-          name: '',
-          email: '',
-          message: '',
-          number: '',
-          country: '',
-          city: '',
-        });
-        setErrors({
-          name: '',
-          email: '',
-          message: '',
-          number: '',
-          country: '',
-          city: '',
-        });
-      } else {
-        alert("Failed to submit the form. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error submitting the form:", error);
-      alert("An error occurred. Please try again later.");
+      // Clean up the temporary inputs
+      formRef.current.removeChild(phoneInput);
+      formRef.current.removeChild(dateInput);
     }
-  } else {
-    alert("Please fill out all fields correctly.");
-  }
-};
-
-
-  // Validate all form fields before submission
-  const validateForm = (): boolean => {
-    
-    Object.keys(formData).forEach((field) => {
-      const value = formData[field as keyof FormData];
-      validateField(field, value);
-    });
-    const hasErrors = Object.values(errors).some((error) => error !== '');
-    return !hasErrors;
   };
 
-return (
+  return (
     <div className="contact-us-container flex flex-col md:flex-row gap-2 p-4">
       {/* Left Content Container */}
       <div className="left-content flex-1 md:w-1/3 bg-white p-4 rounded-lg text-gray-800">
@@ -197,20 +111,30 @@ return (
 
       {/* Right Side Form Content */}
       <div className="contact-form-container flex-1 md:w-2/3 bg-white p-4 rounded-lg shadow-lg">
+        <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+    />
         <h2 className="text-center text-3xl font-semibold text-green-700 mb-6">Contact Us</h2>
-        <form onSubmit={handleSubmit} className="space-y-3">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-3">
           <div className="form-group">
             <label htmlFor="name" className="text-lg">Name</label>
             <input
               type="text"
               id="name"
               name="name"
-              value={formData.name}
-              onChange={handleChange}
               className="input-field"
               placeholder="Enter your name"
+              required
             />
-            {errors.name && <span className="error text-red-500">{errors.name}</span>}
           </div>
 
           <div className="form-group">
@@ -218,12 +142,12 @@ return (
             <PhoneInput
               international
               defaultCountry="IN"
-              value={formData.number}
-              onChange={handlePhoneChange}
+              value={phoneNumber}
+              onChange={(value) => setPhoneNumber(value || '')}
               className="phone-input w-full"
               placeholder="Enter your phone number"
+              required
             />
-            {errors.number && <span className="error text-red-500">{errors.number}</span>}
           </div>
 
           <div className="form-group">
@@ -232,12 +156,10 @@ return (
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
               className="input-field"
               placeholder="Enter your email"
+              required
             />
-            {errors.email && <span className="error text-red-500">{errors.email}</span>}
           </div>
 
           <div className="form-group flex gap-4">
@@ -247,12 +169,10 @@ return (
                 type="text"
                 id="country"
                 name="country"
-                value={formData.country}
-                onChange={handleChange}
                 className="input-field"
                 placeholder="Enter your country"
+                required
               />
-              {errors.country && <span className="error text-red-500">{errors.country}</span>}
             </div>
             <div className="location-city flex-1">
               <label htmlFor="city" className="text-lg">City</label>
@@ -260,12 +180,10 @@ return (
                 type="text"
                 id="city"
                 name="city"
-                value={formData.city}
-                onChange={handleChange}
                 className="input-field"
                 placeholder="Enter your city"
+                required
               />
-              {errors.city && <span className="error text-red-500">{errors.city}</span>}
             </div>
           </div>
 
@@ -274,12 +192,10 @@ return (
             <textarea
               id="message"
               name="message"
-              value={formData.message}
-              onChange={handleChange}
               className="input-field"
               placeholder="Write your message"
+              required
             />
-            {errors.message && <span className="error text-red-500">{errors.message}</span>}
           </div>
 
           <button type="submit" className="w-full p-3 bg-green-600 text-white rounded-md transition-all duration-300 hover:bg-green-700">
