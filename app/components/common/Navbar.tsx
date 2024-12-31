@@ -49,7 +49,13 @@ const menuVariants = {
 
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
+const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact-us');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <nav className="bg-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,7 +86,13 @@ const NavBar: React.FC = () => {
             <NavLink href="/loans">Loans</NavLink>
             <NavLink href="/about">About Us</NavLink>
         
-            <NavLink href="/contact">Contact us</NavLink>
+            <a
+              href="#contact-us"
+              onClick={scrollToContact}
+              className="px-4 py-2 rounded-md text-base font-semibold text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105 active:scale-95"
+            >
+              Contact Us
+            </a>
 
             
           </div>
@@ -131,7 +143,8 @@ const NavBar: React.FC = () => {
             Blog
           </Link>
           <Link
-            href="/contact"
+             href="#contact-us"
+            onClick={scrollToContact}
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-500 hover:bg-indigo-50 transition-colors duration-300"
           >
             Contact

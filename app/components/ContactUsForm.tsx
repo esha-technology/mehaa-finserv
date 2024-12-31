@@ -60,7 +60,7 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <div className="contact-us-container flex flex-col md:flex-row gap-2 p-4">
+    <div id="contact-us" className="contact-us-container flex flex-col md:flex-row gap-2 p-4">
       {/* Left Content Container */}
       <div className="left-content flex-1 md:w-1/3 bg-white p-4 rounded-lg text-gray-800">
         <h1 className="left-content-title text-3xl font-bold mb-4">Let&#39;s Talk</h1>
