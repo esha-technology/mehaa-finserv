@@ -38,7 +38,7 @@
   border-radius: 8px;      /* Optional: rounded corners */
   display: inline-block;
   width: 100%;
-  aspect-ratio: 5 / 4;     /* 5:4 aspect ratio */
+  aspect-ratio: 4 / 3;     /* 5:4 aspect ratio */
   overflow: hidden;        /* Ensures no overflow outside the border */
 }
 
