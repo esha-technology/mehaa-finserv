@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Heading from "./common/Heading";
 import Link from "next/link";
 import { GiHouse, GiGears, GiReceiveMoney } from "react-icons/gi";
-import {  FaUserTie, FaCar } from "react-icons/fa6";
+import { FaUserTie, FaCar } from "react-icons/fa6";
 import { BsMortarboardFill } from "react-icons/bs";
 import { HiOutlineDocumentCurrencyRupee } from "react-icons/hi2";
 
@@ -25,7 +25,7 @@ const Loan: React.FC = () => {
     details: string;
     icon: ReactNode;
     color: string;
-    slug: string; // Add a slug for each loan type to use in the URL
+    path: string;
   }
 
   const services: Service[] = [
@@ -35,7 +35,7 @@ const Loan: React.FC = () => {
         "Own your dream home with our easy home loans. Affordable rates and flexible terms to suit your needs.",
       icon: <GiHouse size={42} />,
       color: colors[0],
-      slug: "home-loan", // Add slug
+      path: "/loans/home",
     },
     {
       title: "Vehicle Loan",
@@ -43,7 +43,7 @@ const Loan: React.FC = () => {
         "Drive your dream with our easy vehicle loans. Enjoy competitive rates and flexible repayment options.",
       icon: <FaCar size={36} />,
       color: colors[1],
-      slug: "vehicle-loan", // Add slug
+      path: "/loans/vehicle",
     },
     {
       title: "Business Loan",
@@ -51,7 +51,7 @@ const Loan: React.FC = () => {
         "Fuel your business growth with our flexible business loans. Competitive rates and easy repayment options to support your success.",
       icon: <FaUserTie size={36} />,
       color: colors[2],
-      slug: "business-loan", // Add slug
+      path: "/loans/business",
     },
     {
       title: "Mortgage Loan",
@@ -59,7 +59,7 @@ const Loan: React.FC = () => {
         "Our strategies help your business scale up with a focus on sustainable growth and profitability.",
       icon: <HiOutlineDocumentCurrencyRupee size={36} />,
       color: colors[3],
-      slug: "mortgage-loan", // Add slug
+      path: "/loans/mortgage",
     },
     {
       title: "Machinery Loan",
@@ -67,7 +67,7 @@ const Loan: React.FC = () => {
         "Boost your business productivity with our affordable machinery loans, designed for your needs.",
       icon: <GiGears size={36} />,
       color: colors[4],
-      slug: "machinery-loan", // Add slug
+      path: "/loans/machinery",
     },
     {
       title: "Personal Loan",
@@ -75,7 +75,7 @@ const Loan: React.FC = () => {
         "Access funds easily with our personal loans, offering fast approval and flexible repayment options.",
       icon: <GiReceiveMoney size={36} />,
       color: colors[5],
-      slug: "personal-loan", // Add slug
+      path: "/loans/personal",
     },
     {
       title: "Educational Loan",
@@ -83,7 +83,7 @@ const Loan: React.FC = () => {
         "Pursue your academic aspirations with confidence, backed by our flexible and competitive educational loans.",
       icon: <BsMortarboardFill size={36} />,
       color: colors[6],
-      slug: "educational-loan", // Add slug
+      path: "/loans/education",
     },
   ];
 
@@ -101,7 +101,7 @@ const Loan: React.FC = () => {
               id="hoverAnimation"
               className="border w-full md:w-[21%] lg:w-[20%] px-5 py-10 rounded-3xl mx-5 mb-10 flex flex-col items-center text-center shadow-lg"
             >
-              <Link href={`/loans/${service.slug}`}> {/* Use the dynamic link here */}
+              <Link href={service.path}>
                 <div className="flex flex-col justify-center items-center">
                   <div className={`p-7 rounded-md mb-6 ${service.color}`}>
                     {service.icon}
@@ -111,7 +111,7 @@ const Loan: React.FC = () => {
                   </h2>
                   <p className="text-base sm:text-lg mb-4">{service.details}</p>
                   <Link
-                    href="/loans" 
+                    href={service.path}
                     className="text-sky-600 font-medium hover:underline flex gap-1"
                   >
                     Read More <TbExternalLink className="mt-1" />
@@ -121,7 +121,7 @@ const Loan: React.FC = () => {
             </motion.div>
           ))}
         </div>
-      </div>|
+      </div>
     </div>
   );
 };
