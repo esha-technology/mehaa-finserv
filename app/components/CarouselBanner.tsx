@@ -108,11 +108,11 @@ const CarouselBanner = () => {
                         {item.highlight}
                       </p>
                     )}
-                    <button className="mt-4 px-8 py-4 bg-green-500 text-white rounded-full 
+                    {/* <button className="mt-4 px-8 py-4 bg-green-500 text-white rounded-full 
                       hover:bg-green-600 transition-all duration-300 font-semibold text-lg
                       transform hover:scale-105">
                       {item.buttonText}
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
