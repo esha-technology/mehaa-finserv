@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import LoanApplicationForm from '@/app/components/LoanForm';
 import NavBar from '@/app/components/common/Navbar';
 
-const MachineryLoan = () => {
+const MortgageLoan = () => {
   const [showForm, setShowForm] = useState(false);
 
   const handleApplyNowClick = () => {
@@ -14,18 +14,18 @@ const MachineryLoan = () => {
   };
 
   return (
-    <div className="min-h-screen bg-green-50">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <NavBar />
-      <header className="bg-green-500 text-white">
+      <header className="bg-blue-500 text-white">
         <motion.div
           className="container mx-auto px-6 py-16 text-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold mb-4">Machinery Loan Services</h1>
-          <p className="text-lg">Grow your business with Mehaserv’s tailored machinery loans.</p>
+          <h1 className="text-4xl font-bold mb-4">Mortgage Loan Services</h1>
+          <p className="text-lg">Turn your dream home into reality with Mehaserv’s flexible mortgage plans.</p>
         </motion.div>
       </header>
 
@@ -38,15 +38,15 @@ const MachineryLoan = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-semibold mb-4 text-green-500">Why Choose Mehaserv Machinery Loans?</h2>
+            <h2 className="text-3xl font-semibold mb-4 text-blue-500">Why Choose Mehaserv Mortgage Loans?</h2>
             <ul className="list-disc pl-5 space-y-2 text-gray-700">
-              <li>Competitive interest rates for machinery purchases.</li>
-              <li>Flexible repayment options for businesses.</li>
-              <li>Quick approvals to keep your business running smoothly.</li>
-              <li>Financing for new and used machinery.</li>
+              <li>Competitive interest rates tailored to your needs.</li>
+              <li>Flexible repayment options for long-term affordability.</li>
+              <li>Streamlined application process with quick approvals.</li>
+              <li>Expert guidance for first-time home buyers.</li>
             </ul>
             <p className="mt-6 text-gray-600">
-              At Mehaserv, we understand the importance of the right tools. Let us help you equip your business for success.
+              At Mehaserv, we are committed to making home ownership accessible and stress-free for everyone.
             </p>
           </motion.div>
 
@@ -57,8 +57,8 @@ const MachineryLoan = () => {
             transition={{ duration: 0.8 }}
           >
             <Image
-              src="/images/machinery-loan.jpg"
-              alt="Machinery Loan Services"
+              src="/images/mortgage-loan.jpg"
+              alt="Mortgage Loan Services"
               width={500}
               height={400}
               className="rounded-lg shadow-lg"
@@ -68,34 +68,34 @@ const MachineryLoan = () => {
 
         {/* Benefits Section */}
         <section className="mt-12">
-          <h3 className="text-2xl font-semibold text-green-500 mb-6">Benefits of Mehaserv Machinery Loans</h3>
+          <h3 className="text-2xl font-semibold text-blue-500 mb-6">Benefits of Mehaserv Mortgage Loans</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-6 bg-white rounded-lg shadow-md">
-              <h4 className="text-lg font-bold text-green-500">Low Interest Rates</h4>
-              <p className="text-gray-600 mt-2">Affordable financing for your machinery needs.</p>
+              <h4 className="text-lg font-bold text-blue-500">Low Interest Rates</h4>
+              <p className="text-gray-600 mt-2">Affordable rates to fit your budget.</p>
             </div>
             <div className="p-6 bg-white rounded-lg shadow-md">
-              <h4 className="text-lg font-bold text-green-500">Fast Approvals</h4>
-              <p className="text-gray-600 mt-2">Get your loan approved in no time.</p>
+              <h4 className="text-lg font-bold text-blue-500">High Loan Amounts</h4>
+              <p className="text-gray-600 mt-2">Finance up to 80% of your property value.</p>
             </div>
             <div className="p-6 bg-white rounded-lg shadow-md">
-              <h4 className="text-lg font-bold text-green-500">Flexible Terms</h4>
-              <p className="text-gray-600 mt-2">Customized repayment plans for your business.</p>
+              <h4 className="text-lg font-bold text-blue-500">Expert Support</h4>
+              <p className="text-gray-600 mt-2">Dedicated team to assist throughout the process.</p>
             </div>
           </div>
         </section>
 
         {/* Testimonials Section */}
         <section className="mt-12">
-          <h3 className="text-2xl font-semibold text-green-500 mb-6">What Our Clients Say</h3>
+          <h3 className="text-2xl font-semibold text-blue-500 mb-6">What Our Clients Say</h3>
           <div className="space-y-6">
             <div className="p-6 bg-white rounded-lg shadow-md">
-              <p className="text-gray-600">&quot;Mehaserv helped us acquire the machinery we needed to expand our business!&quot;</p>
-              <span className="text-green-500 font-bold mt-2">- Arjun, Factory Owner</span>
+              <p className="text-gray-600">&quot;Mehaserv made buying my first home so easy. Highly recommend their services!&quot;</p>
+              <span className="text-blue-500 font-bold mt-2">- Ramesh, Homeowner</span>
             </div>
             <div className="p-6 bg-white rounded-lg shadow-md">
-              <p className="text-gray-600">&quot;The loan process was quick and hassle-free. Highly recommend!&quot;</p>
-              <span className="text-green-500 font-bold mt-2">- Priya, Small Business Owner</span>
+              <p className="text-gray-600">&quot;The process was quick and hassle-free. Great experience overall.&quot;</p>
+              <span className="text-blue-500 font-bold mt-2">- Anjali, Homeowner</span>
             </div>
           </div>
         </section>
@@ -103,17 +103,17 @@ const MachineryLoan = () => {
 
       {/* Call to Action */}
       <motion.section
-        className="bg-green-500 text-white py-10"
+        className="bg-blue-500 text-white py-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <div className="container mx-auto px-6 text-center">
-          <h3 className="text-2xl font-semibold mb-4">Ready to Upgrade Your Business?</h3>
-          <p className="mb-6">Apply now and let Mehaserv power your growth with our machinery loans.</p>
+          <h3 className="text-2xl font-semibold mb-4">Ready to Own Your Dream Home?</h3>
+          <p className="mb-6">Apply now and take the first step towards homeownership with Mehaserv.</p>
           <button
             onClick={handleApplyNowClick}
-            className="bg-white text-green-500 font-bold py-3 px-6 rounded-full shadow-md hover:bg-gray-100 transition-all"
+            className="bg-white text-blue-500 font-bold py-3 px-6 rounded-full shadow-md hover:bg-gray-100 transition-all"
           >
             Apply Now
           </button>
@@ -126,4 +126,4 @@ const MachineryLoan = () => {
   );
 };
 
-export default MachineryLoan;
+export default MortgageLoan;

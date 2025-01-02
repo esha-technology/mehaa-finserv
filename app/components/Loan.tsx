@@ -35,7 +35,7 @@ const Loan: React.FC = () => {
         "Own your dream home with our easy home loans. Affordable rates and flexible terms to suit your needs.",
       icon: <GiHouse size={42} />,
       color: colors[0],
-      path: "/loans/home",
+      path: "/loans/home-loan",
     },
     {
       title: "Vehicle Loan",
@@ -43,7 +43,7 @@ const Loan: React.FC = () => {
         "Drive your dream with our easy vehicle loans. Enjoy competitive rates and flexible repayment options.",
       icon: <FaCar size={36} />,
       color: colors[1],
-      path: "/loans/vehicle",
+      path: "/loans/vehicle-loan",
     },
     {
       title: "Business Loan",
@@ -51,7 +51,7 @@ const Loan: React.FC = () => {
         "Fuel your business growth with our flexible business loans. Competitive rates and easy repayment options to support your success.",
       icon: <FaUserTie size={36} />,
       color: colors[2],
-      path: "/loans/business",
+      path: "/loans/business-loan",
     },
     {
       title: "Mortgage Loan",
@@ -59,7 +59,7 @@ const Loan: React.FC = () => {
         "Our strategies help your business scale up with a focus on sustainable growth and profitability.",
       icon: <HiOutlineDocumentCurrencyRupee size={36} />,
       color: colors[3],
-      path: "/loans/mortgage",
+      path: "/loans/mortgage-loan",
     },
     {
       title: "Machinery Loan",
@@ -67,7 +67,7 @@ const Loan: React.FC = () => {
         "Boost your business productivity with our affordable machinery loans, designed for your needs.",
       icon: <GiGears size={36} />,
       color: colors[4],
-      path: "/loans/machinery",
+      path: "/loans/machinery-loan",
     },
     {
       title: "Personal Loan",
@@ -75,7 +75,7 @@ const Loan: React.FC = () => {
         "Access funds easily with our personal loans, offering fast approval and flexible repayment options.",
       icon: <GiReceiveMoney size={36} />,
       color: colors[5],
-      path: "/loans/personal",
+      path: "/loans/personal-loan",
     },
     {
       title: "Educational Loan",
@@ -83,7 +83,7 @@ const Loan: React.FC = () => {
         "Pursue your academic aspirations with confidence, backed by our flexible and competitive educational loans.",
       icon: <BsMortarboardFill size={36} />,
       color: colors[6],
-      path: "/loans/education",
+      path: "/loans/educational-loan",
     },
   ];
 
