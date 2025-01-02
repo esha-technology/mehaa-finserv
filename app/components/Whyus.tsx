@@ -1,5 +1,6 @@
 import React from "react";
 import { IoShieldCheckmark, IoTime, IoPeople, IoEye, IoSettings, IoHelpCircle } from "react-icons/io5";
+import Heading from "./common/Heading";
 
 const Whyus: React.FC = () => {
   const cards = [
@@ -43,7 +44,8 @@ const Whyus: React.FC = () => {
 
   return (
     <div className="text-center py-12 px-6">
-      <h2 className="text-4xl font-bold mb-10 text-gray-800">Why Us</h2>
+   
+        <Heading heading="Our Loans" color="bg-green-200" />
       <div className="flex flex-wrap justify-center gap-6 mt-20">
         {cards.map((card, index) => (
           <div

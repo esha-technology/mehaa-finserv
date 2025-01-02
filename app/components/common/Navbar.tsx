@@ -59,7 +59,7 @@ const scrollToContact = (e: React.MouseEvent) => {
   return (
     <nav className="bg-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

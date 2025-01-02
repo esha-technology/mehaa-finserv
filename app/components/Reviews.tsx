@@ -5,6 +5,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import Heading from "./common/Heading";
 
 // Define types for the review data
 interface Review {
@@ -60,23 +61,23 @@ const Reviews: React.FC = () => {
   ];
 
   // State to track how many reviews to show
-  const [visibleReviews, setVisibleReviews] = useState<number>(3);
+  const [visibleReviews] = useState<number>(3);
 
   // Function to show more reviews
-  const showMore = () => {
-    setVisibleReviews(reviews.length); // Show all reviews
-  };
+  // const showMore = () => {
+  //   setVisibleReviews(reviews.length); // Show all reviews
+  // };
 
-  // Function to show less reviews
-  const showLess = () => {
-    setVisibleReviews(6); // Show only the first 6 reviews
-  };
+  // // Function to show less reviews
+  // const showLess = () => {
+  //   setVisibleReviews(6); // Show only the first 6 reviews
+  // };
 
   return (
     <section className="my-20">
       <div>
         <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        
+          <Heading heading="Testimonials" color="bg-green-200" />
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={10}
@@ -95,7 +96,7 @@ const Reviews: React.FC = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          {visibleReviews < reviews.length && (
+          {/* {visibleReviews < reviews.length && (
             <button
               onClick={showMore}
               className="mt-4 bg-green-500 text-white px-4 py-2 rounded"
@@ -110,7 +111,7 @@ const Reviews: React.FC = () => {
             >
               Show Less
             </button>
-          )}
+          )} */}
         </div>
       </div>
     </section>

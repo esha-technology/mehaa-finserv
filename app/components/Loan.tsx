@@ -88,41 +88,44 @@ const Loan: React.FC = () => {
   ];
 
   return (
-    <div className="scroll-py-14 md:mt-5 lg:mt-16">
-      <Heading heading="Our Loans" color="bg-sky-200" />
-      <div className="container mx-auto px-5">
-        <div className="flex flex-wrap justify-center gap-6 mt-20">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 200 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, ease: "linear", delay: 0.1 }}
-              id="hoverAnimation"
-              className="border w-full md:w-[21%] lg:w-[20%] px-5 py-10 rounded-3xl mx-5 mb-10 flex flex-col items-center text-center shadow-lg"
-            >
-              <Link href={service.path}>
-                <div className="flex flex-col justify-center items-center">
-                  <div className={`p-7 rounded-md mb-6 ${service.color}`}>
-                    {service.icon}
-                  </div>
-                  <h2 className="font-bold text-xl sm:text-2xl mb-4 mt-2">
-                    {service.title}
-                  </h2>
-                  <p className="text-base sm:text-lg mb-4">{service.details}</p>
-                  <Link
-                    href={service.path}
-                    className="text-sky-600 font-medium hover:underline flex gap-1"
-                  >
-                    Read More <TbExternalLink className="mt-1" />
-                  </Link>
-                </div>
+ <div className="scroll-py-14 md:mt-5 lg:mt-16">
+  <Heading heading="Loans" color="bg-green-200" />
+  <div className="container mx-auto px-5">
+    <div className="flex flex-wrap justify-center gap-6 mt-20">
+      {services.map((service, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 200 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "linear", delay: 0.1 }}
+          id="hoverAnimation"
+          className="w-full md:w-[18%] lg:w-[16%] px-4 py-8 rounded-3xl mx-5 mb-8 flex flex-col items-center text-center bg-white shadow-lg aspect-w-4 aspect-h-3 hover:shadow-xl hover:scale-105 transform transition-all duration-300 ease-in-out"
+        >
+          <Link href={service.path}>
+            <div className="flex flex-col justify-center items-center">
+              <div className={`p-6 rounded-full mb-6 ${service.color} transition-all duration-300 ease-in-out transform hover:scale-110`}>
+                {service.icon}
+              </div>
+              <h2 className="font-semibold text-lg sm:text-xl mb-3 mt-2 text-gray-800">
+                {service.title}
+              </h2>
+              <p className="text-sm sm:text-base mb-4 text-gray-600">{service.details}</p>
+              <Link
+                href={service.path}
+                className="text-sky-600 font-medium hover:underline flex gap-1 items-center"
+              >
+                Read More <TbExternalLink className="mt-1 transition-all duration-300" />
               </Link>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+            </div>
+          </Link>
+        </motion.div>
+      ))}
     </div>
+  </div>
+</div>
+
+
+
   );
 };
 

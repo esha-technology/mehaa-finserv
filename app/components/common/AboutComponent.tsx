@@ -4,7 +4,7 @@ import Heading from "./Heading";
 const AboutComponent: React.FC = () => {
   return (
     <>
-      <Heading heading="About Us" color="bg-indigo-100" />
+      <Heading heading="About Us" color="bg-green-200" />
 
       <section className="py-14 relative">
         <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
