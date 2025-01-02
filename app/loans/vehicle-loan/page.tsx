@@ -17,7 +17,7 @@ const VehicleLoan = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <NavBar />
-      <header className="bg-blue-500 text-white">
+      <header className="bg-green-500 text-white">
         <motion.div
           className="container mx-auto px-6 py-16 text-center"
           initial={{ opacity: 0, y: -50 }}
@@ -38,7 +38,7 @@ const VehicleLoan = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-semibold mb-4 text-blue-500">Why Choose Mehaserv Vehicle Loans?</h2>
+            <h2 className="text-3xl font-semibold mb-4 text-green-500">Why Choose Mehaserv Vehicle Loans?</h2>
             <ul className="list-disc pl-5 space-y-2 text-gray-700">
               <li>Low interest rates for both new and used vehicles.</li>
               <li>Flexible repayment terms to suit your budget.</li>
@@ -68,18 +68,18 @@ const VehicleLoan = () => {
 
         {/* Benefits Section */}
         <section className="mt-12">
-          <h3 className="text-2xl font-semibold text-blue-500 mb-6">Benefits of Mehaserv Vehicle Loans</h3>
+          <h3 className="text-2xl font-semibold text-green-500 mb-6">Benefits of Mehaserv Vehicle Loans</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-6 bg-white rounded-lg shadow-md">
-              <h4 className="text-lg font-bold text-blue-500">Affordable EMIs</h4>
+              <h4 className="text-lg font-bold text-green-500">Affordable EMIs</h4>
               <p className="text-gray-600 mt-2">Enjoy pocket-friendly monthly installments.</p>
             </div>
             <div className="p-6 bg-white rounded-lg shadow-md">
-              <h4 className="text-lg font-bold text-blue-500">Wide Coverage</h4>
+              <h4 className="text-lg font-bold text-green-500">Wide Coverage</h4>
               <p className="text-gray-600 mt-2">Loans available for cars, bikes, and commercial vehicles.</p>
             </div>
             <div className="p-6 bg-white rounded-lg shadow-md">
-              <h4 className="text-lg font-bold text-blue-500">Hassle-Free Processing</h4>
+              <h4 className="text-lg font-bold text-green-500">Hassle-Free Processing</h4>
               <p className="text-gray-600 mt-2">Minimal paperwork for a seamless experience.</p>
             </div>
           </div>
@@ -87,15 +87,15 @@ const VehicleLoan = () => {
 
         {/* Testimonials Section */}
         <section className="mt-12">
-          <h3 className="text-2xl font-semibold text-blue-500 mb-6">What Our Clients Say</h3>
+          <h3 className="text-2xl font-semibold text-green-500 mb-6">What Our Clients Say</h3>
           <div className="space-y-6">
             <div className="p-6 bg-white rounded-lg shadow-md">
               <p className="text-gray-600">&quot;Thanks to Mehaserv, I now own my dream car. The process was smooth and quick!&quot;</p>
-              <span className="text-blue-500 font-bold mt-2">- Priya, Car Owner</span>
+              <span className="text-green-500 font-bold mt-2">- Priya, Car Owner</span>
             </div>
             <div className="p-6 bg-white rounded-lg shadow-md">
               <p className="text-gray-600">&quot;Their support team was exceptional. I highly recommend their vehicle loan services.&quot;</p>
-              <span className="text-blue-500 font-bold mt-2">- Amit, Bike Owner</span>
+              <span className="text-green-500 font-bold mt-2">- Amit, Bike Owner</span>
             </div>
           </div>
         </section>
@@ -103,7 +103,7 @@ const VehicleLoan = () => {
 
       {/* Call to Action */}
       <motion.section
-        className="bg-blue-500 text-white py-10"
+        className="bg-green-500 text-white py-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -113,7 +113,7 @@ const VehicleLoan = () => {
           <p className="mb-6">Apply now and make your dream vehicle a reality with Mehaserv.</p>
           <button
             onClick={handleApplyNowClick}
-            className="bg-white text-blue-500 font-bold py-3 px-6 rounded-full shadow-md hover:bg-gray-100 transition-all"
+            className="bg-white text-green-500 font-bold py-3 px-6 rounded-full shadow-md hover:bg-gray-100 transition-all"
           >
             Apply Now
           </button>
