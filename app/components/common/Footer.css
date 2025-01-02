@@ -29,12 +29,23 @@
     min-width: 300px;
     max-width: 50%;
   }
-  
-  .footer-logo-img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 20px;
-  }
+ /* CSS */
+.footer-logo .logo-wrapper {
+  position: relative;
+  background-color: white;  /* White background */
+  padding: 10px;            /* Add padding to give the outline effect */
+  border: 3px solid #000;  /* Black border */
+  border-radius: 8px;      /* Optional: rounded corners */
+  display: inline-block;
+  width: 100%;
+  aspect-ratio: 5 / 4;     /* 5:4 aspect ratio */
+  overflow: hidden;        /* Ensures no overflow outside the border */
+}
+
+.footer-logo-img {
+  object-fit: cover; /* Ensures the image maintains the aspect ratio */
+}
+
   
   .contact-info p {
     margin: 10px 0;

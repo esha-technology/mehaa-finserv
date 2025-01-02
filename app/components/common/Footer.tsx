@@ -16,68 +16,70 @@ const Footer: React.FC = () => {
       <footer>
         <div className="footer-content">
           <div className="footer-left">
-            {/* Logo Section */}
-            <div className="footer-logo">
-              <Image
-                src="/finance logo.jpg" // Make sure this is the correct path
-                alt="Company Logo"
-                width={400}
-                height={400}
-                className="footer-logo-img"
-              />
-            </div>
+      {/* Logo Section */}
+      <div className="footer-logo">
+        <div className="logo-wrapper">
+          <Image
+            src="/finance logo.jpg" // Make sure this is the correct path
+            alt="Company Logo"
+            width={400}
+            height={400}
+            className="footer-logo-img"
+          />
+        </div>
+      </div>
 
-            {/* Contact Information Section */}
-            <div className="contact-info">
-              <p>
-                <strong>Email:</strong>{" "}
-                <a href="mailto:eshatechnologyprvtltd@gmail.com">
-                  eshatechnologyprvtltd@gmail.com
-                </a>
-              </p>
-              <p>
-                <strong>Phone:</strong>{" "}
-                <a href="tel:+919848197223">9848197223</a>
-              </p>
-            </div>
+      {/* Contact Information Section */}
+      <div className="contact-info">
+        <p>
+          <strong>Email:</strong>{" "}
+          <a href="mailto:eshatechnologyprvtltd@gmail.com">
+            eshatechnologyprvtltd@gmail.com
+          </a>
+        </p>
+        <p>
+          <strong>Phone:</strong>{" "}
+          <a href="tel:+919848197223">9848197223</a>
+        </p>
+      </div>
 
-            {/* Follow Us Section */}
-            <div className="social-media-section">
-              <h3>Follow Us</h3>
-              <ul className="social-media">
-                <li>
-                  <a
-                    href="https://www.facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                  >
-                    <FaFacebook size={30} />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                  >
-                    <FaInstagram size={30} />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://wa.me"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="WhatsApp"
-                  >
-                    <FaWhatsapp size={30} />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+      {/* Follow Us Section */}
+      <div className="social-media-section">
+        <h3>Follow Us</h3>
+        <ul className="social-media">
+          <li>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebook size={30} />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram size={30} />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp size={30} />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
           {/* Map Section with Address */}
           <div className="map-section">
