@@ -61,7 +61,7 @@ const Reviews: React.FC = () => {
   ];
 
   // State to track how many reviews to show
-  const [visibleReviews] = useState<number>(3);
+  const [visibleReviews] = useState<number>(5);
 
   // Function to show more reviews
   // const showMore = () => {

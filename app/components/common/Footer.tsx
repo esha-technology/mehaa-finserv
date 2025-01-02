@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css"; // Importing the CSS file
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa"; // Importing the required icons
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
  
@@ -20,7 +21,7 @@ const Footer: React.FC = () => {
       <div className="footer-logo">
         <div className="logo-wrapper">
           <Image
-            src="/finance logo.jpg" // Make sure this is the correct path
+            src="/finance logo.png" // Make sure this is the correct path
             alt="Company Logo"
             width={400}
             height={400}
@@ -34,7 +35,7 @@ const Footer: React.FC = () => {
         <p>
           <strong>Email:</strong>{" "}
           <a href="mailto:eshatechnologyprvtltd@gmail.com">
-            eshatechnologyprvtltd@gmail.com
+            mehaafinserv@gmail.com
           </a>
         </p>
         <p>
@@ -97,13 +98,27 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h3>Services</h3>
             <ul>
-              <li>Home loan</li>
-              <li>Vechile loan</li>
-              <li>Bussiness loan</li>
-              <li>Mortagage loan</li>
-              <li>Machinary loan</li>
-              <li>Personal loan</li>
-              <li>Education loan</li>
+              <li className="hover:cursor-pointer">
+                <Link href="./loans/home-loan">Home loan</Link>
+              </li>
+              <li className="hover:cursor-pointer">
+                <Link href="./loans/vehicle-loan">Vehicle loan</Link>
+              </li>
+              <li className="hover:cursor-pointer">
+                <Link href="./loans/business-loan">Business loan</Link>
+              </li>
+              <li className="hover:cursor-pointer">
+                <Link href="./loans/mortgage-loan">Mortgage loan</Link>
+              </li>
+              <li className="hover:cursor-pointer">
+                <Link href="./loans/machinery-loan">Machinery loan</Link>
+              </li>
+              <li className="hover:cursor-pointer">
+                <Link href="./loans/personal-loan">Personal loan</Link>
+              </li>
+              <li className="hover:cursor-pointer">
+                <Link href="./loans/education-loan">Education loan</Link>
+              </li>
             </ul>
           </div>
 
@@ -111,7 +126,7 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h3>Company</h3>
             <ul>
-              <li>About Us</li>
+              <li><Link href="/about">About Us</Link></li>
               <li>Contact</li>
             </ul>
           </div>
