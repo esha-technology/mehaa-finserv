@@ -45,7 +45,7 @@ const Whyus: React.FC = () => {
   return (
     <div className="text-center py-12 px-6">
    
-        <Heading heading="Our Loans" color="bg-green-200" />
+        <Heading heading="Why Us" color="bg-green-200" />
       <div className="flex flex-wrap justify-center gap-6 mt-20">
         {cards.map((card, index) => (
           <div
