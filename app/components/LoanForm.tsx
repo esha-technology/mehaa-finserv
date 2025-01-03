@@ -79,7 +79,7 @@ const LoanApplicationForm = () => {
         setFormErrors({});
       } catch (error) {
         toast.error("Error! Something went wrong. Please try again.");
-        console.error("Error!", error.message);
+        console.error("Error!", error);
       }
 
       formRef.current.removeChild(phoneInput);
