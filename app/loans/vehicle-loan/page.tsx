@@ -76,7 +76,7 @@ const VehicleLoan = () => {
       transition={{ duration: 0.8 }}
     >
       <Image
-        src="/images/vehicle-loan.jpg"
+        src="/images/vehicle loan.jpg"
         alt="Vehicle Loan Services"
         width={500}
         height={200}

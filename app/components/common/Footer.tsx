@@ -18,17 +18,17 @@ const Footer: React.FC = () => {
         <div className="footer-content">
           <div className="footer-left">
       {/* Logo Section */}
-      <div className="footer-logo">
+      {/* <div className="footer-logo">
         <div className="logo-wrapper">
           <Image
-            src="/finance logo.png" // Make sure this is the correct path
+            src="/finance logo.jpg" // Make sure this is the correct path
             alt="Company Logo"
             width={400}
             height={400}
             className="footer-logo-img"
           />
         </div>
-      </div>
+      </div> */}
 
       {/* Contact Information Section */}
       <div className="contact-info mt-14">

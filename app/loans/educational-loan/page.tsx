@@ -42,9 +42,7 @@ const EducationalLoan = () => {
 
       {/* Content Section */}
      <main className="container mx-auto px-6 py-10 shadow-lg rounded-lg bg-white">
-  <h2 className="text-3xl font-semibold text-center mt-4">
-    Why Choose <span className="text-green-700">MehaaFinserv</span> Educational Loans?
-  </h2>
+  
   
   {/* Content Section */}
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border border-gray-300 rounded-lg p-8 shadow-lg mt-8">
@@ -55,6 +53,9 @@ const EducationalLoan = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
     >
+      <h2 className="text-3xl font-semibold text-left mt-4">
+    Why Choose <span className="text-green-700">MehaaFinserv</span> Educational Loans?
+  </h2>
       <ul className="list-disc pl-5 space-y-4 text-gray-700">
         <li>Low interest rates to make education accessible.</li>
         <li>Flexible repayment terms for students and professionals.</li>
