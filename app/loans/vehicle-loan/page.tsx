@@ -6,7 +6,7 @@ import LoanApplicationForm from "@/app/components/LoanForm";
 import NavBar from "@/app/components/common/Navbar";
 import Whyus from "@/app/components/Whyus";
 import Footer from "@/app/components/common/Footer";
-import { FaUserTie, FaCar } from "react-icons/fa6";
+import { FaCar } from "react-icons/fa6";
 
 
 

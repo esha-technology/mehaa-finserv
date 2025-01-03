@@ -6,7 +6,7 @@ import LoanApplicationForm from "@/app/components/LoanForm";
 import NavBar from "@/app/components/common/Navbar";
 import Whyus from "@/app/components/Whyus";
 import Footer from "@/app/components/common/Footer";
-import { GiHouse, GiGears, GiReceiveMoney } from "react-icons/gi";
+import { GiReceiveMoney } from "react-icons/gi";
 
 
 const PersonalLoan = () => {
