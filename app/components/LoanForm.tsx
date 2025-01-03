@@ -9,14 +9,55 @@ const LoanApplicationForm = () => {
   const [phoneNumber, setPhoneNumber] = useState<string>('');
   const formRef = useRef<HTMLFormElement>(null);
 
+  const scriptURL = "https://script.google.com/macros/s/AKfycbz1DUDzavaGOadlQAwEMQy3PHVDdd4Hpw228rQc7QJFyl8xJWGapljeOii8otEUiVZTNA/exec";
+
+   const getCurrentDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     if (formRef.current) {
-      // Add your form submission logic here
-      toast.success("Thank you! Your loan application has been submitted successfully.");
-      formRef.current?.reset();
-      setPhoneNumber('');
+
+      const phoneInput = document.createElement('input');
+      phoneInput.type = 'hidden';
+      phoneInput.name = 'number';
+      phoneInput.value = phoneNumber;
+      formRef.current.appendChild(phoneInput); 
+
+       // Create a hidden input for the date
+      const dateInput = document.createElement('input');
+      dateInput.type = 'hidden';
+      dateInput.id = 'date';
+      dateInput.name = 'date';
+      dateInput.value = getCurrentDate();
+      formRef.current.appendChild(dateInput);
+
+
+      
+      fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(formRef.current)
+      })
+        .then(() => {
+          // Add your form submission logic here
+          toast.success("Thank you! Your loan application has been submitted successfully. Our Team will contact you soon!");
+          formRef.current?.reset();
+          setPhoneNumber('');
+        })
+      
+      .catch((error) => {
+              toast.error("Error! Something went wrong. Please try again.");
+              console.error("Error!", error.message);
+            });
+      
+            // Clean up the temporary inputs
+            formRef.current.removeChild(phoneInput);
+            formRef.current.removeChild(dateInput);
     }
   };
 

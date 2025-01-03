@@ -44,7 +44,7 @@ const ContactUs: React.FC = () => {
         body: new FormData(formRef.current)
       })
 .then(() => {
-        toast.success("Thank you! Your form has been submitted successfully.");
+        toast.success("Thank you! Your data has been submitted successfully. Our Team will contact you soon!!");
         formRef.current?.reset(); // Optional: reset the form
         setPhoneNumber(''); // Clear phone number state
       })
