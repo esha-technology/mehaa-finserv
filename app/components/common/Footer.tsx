@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Contact Information Section */}
-      <div className="contact-info">
+      <div className="contact-info mt-14">
         <p>
           <strong>Email:</strong>{" "}
           <a href="mailto:eshatechnologyprvtltd@gmail.com">
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
 
           {/* Map Section with Address */}
           <div className="map-section">
-            <h3>Our Location</h3>
+            <h3 className="font-semibold">Our Location</h3>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7612.765268005782!2d78.46391209035956!3d17.44139088381972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90a5d40aa43f%3A0x759891c5155b2eac!2sPrakash%20Nagar%2C%20Begumpet%2C%20Hyderabad%2C%20Telangana%20500016!5e0!3m2!1sen!2sin!4v1734504182691!5m2!1sen!2sin"
               width="100%" /* Make the map responsive */
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
             <h3>Services</h3>
             <ul>
               <li className="hover:cursor-pointer">
-                <Link href="./loans/home-loan">Home loan</Link>
+                <Link href="/loans/home-loan">Home loan</Link>
               </li>
               <li className="hover:cursor-pointer">
                 <Link href="./loans/vehicle-loan">Vehicle loan</Link>

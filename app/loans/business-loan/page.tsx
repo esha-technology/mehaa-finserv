@@ -6,6 +6,9 @@ import LoanApplicationForm from "@/app/components/LoanForm";
 import NavBar from "@/app/components/common/Navbar";
 import Whyus from "@/app/components/Whyus";
 import Footer from "@/app/components/common/Footer";
+import { TbExternalLink } from "react-icons/tb";
+import { FaUserTie, FaCar } from "react-icons/fa6";
+
 
 const BusinessLoan = () => {
   const [showForm, setShowForm] = useState(false);
@@ -26,12 +29,13 @@ const BusinessLoan = () => {
       {/* Hero Section */}
       <header className="text-black">
         <motion.div
-          className="container mx-auto px-6 py-16 text-center"
+          className="container mx-auto px-6 py-16 text-center flex gap-2 justify-center items-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl font-bold mb-4">Business Loan Services</h1>
+          <FaUserTie size={70} className="bg-green-100 p-3 rounded-xl" />
+          <h1 className="text-5xl font-bold mb-4"> Business Loan Services</h1>
          
         </motion.div>
       </header>
@@ -70,7 +74,7 @@ const BusinessLoan = () => {
       transition={{ duration: 0.8 }}
     >
       <Image
-        src="/images/business-loan.jpg"
+        src="/images/business loan.jpg"
         alt="Business Loan Services"
         width={500}
         height={400}

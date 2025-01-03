@@ -6,6 +6,9 @@ import LoanApplicationForm from "@/app/components/LoanForm";
 import NavBar from "@/app/components/common/Navbar";
 import Whyus from "@/app/components/Whyus";
 import Footer from "@/app/components/common/Footer";
+import { TbExternalLink } from "react-icons/tb";
+import { GiHouse, GiGears, GiReceiveMoney } from "react-icons/gi";
+
 
 const HomeLoan = () => {
   const [showForm, setShowForm] = useState(false);
@@ -26,12 +29,13 @@ const HomeLoan = () => {
       {/* Hero Section */}
       <header className="text-black">
         <motion.div
-          className="container mx-auto px-6 py-16 text-center"
+          className="container mx-auto px-6 py-16 text-center flex gap-2 justify-center items-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl font-bold mb-4">Home Loan Services</h1>
+          <GiHouse size={70} className="bg-orange-100 p-3 rounded-xl" /> 
+          <h1 className="text-5xl font-bold">Home Loan Services</h1>
          
         </motion.div>
       </header>
@@ -71,7 +75,7 @@ const HomeLoan = () => {
       transition={{ duration: 0.8 }}
     >
       <Image
-        src="/images/home-loan.jpg"
+        src="/images/home loan.jpg"
         alt="Home Loan Services"
         width={500}
         height={400}
