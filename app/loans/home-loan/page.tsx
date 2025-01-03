@@ -6,6 +6,8 @@ import LoanApplicationForm from "@/app/components/LoanForm";
 import NavBar from "@/app/components/common/Navbar";
 import Whyus from "@/app/components/Whyus";
 import Footer from "@/app/components/common/Footer";
+import { GiHouse} from "react-icons/gi";
+
 
 const HomeLoan = () => {
   const [showForm, setShowForm] = useState(false);
@@ -26,24 +28,23 @@ const HomeLoan = () => {
       {/* Hero Section */}
       <header className="text-black">
         <motion.div
-          className="container mx-auto px-6 py-16 text-center"
+          className="container mx-auto px-6 py-16 text-center flex gap-2 justify-center items-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl font-bold mb-4">Home Loan Services</h1>
+          <GiHouse size={70} className="bg-orange-100 p-3 rounded-xl" /> 
+          <h1 className="text-5xl font-bold">Home Loan Services</h1>
          
         </motion.div>
       </header>
 
       {/* Content Section */}
      <main className="container mx-auto px-6 py-10 shadow-lg rounded-lg bg-white">
-  <h2 className="text-3xl font-semibold text-center mt-4">
-    Why Choose <span className="text-green-700">MehaaFinserv</span> Home Loans?
-  </h2>
+  
   
   {/* Content Section */}
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border border-gray-300 rounded-lg p-8 shadow-lg mt-8">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border border-gray-300 rounded-lg p-8 shadow-lg mt-3">
     {/* Text Content */}
     <motion.div
       className="order-2 lg:order-1"
@@ -51,6 +52,9 @@ const HomeLoan = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
     >
+      <h2 className="text-3xl font-semibold text-left mb-8 mt-0 border">
+    Why Choose <span className="text-green-700">MehaaFinserv</span> Home Loans?
+  </h2>
       <ul className="list-disc pl-5 space-y-4 text-gray-700">
         <li>Low interest rates starting at just 6.5% per annum.</li>
         <li>Flexible repayment options tailored to your needs.</li>
@@ -65,13 +69,13 @@ const HomeLoan = () => {
 
     {/* Image */}
     <motion.div
-      className="order-1 lg:order-2 flex justify-end"
+      className="order-1 lg:order-2 flex justify-end mr-5"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
     >
       <Image
-        src="/images/home-loan.jpg"
+        src="/images/home loan.jpg"
         alt="Home Loan Services"
         width={500}
         height={400}

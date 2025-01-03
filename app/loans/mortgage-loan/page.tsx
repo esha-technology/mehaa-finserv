@@ -6,6 +6,8 @@ import LoanApplicationForm from "@/app/components/LoanForm";
 import NavBar from "@/app/components/common/Navbar";
 import Whyus from "@/app/components/Whyus";
 import Footer from "@/app/components/common/Footer";
+import { HiOutlineDocumentCurrencyRupee } from "react-icons/hi2";
+
 
 const MortgageLoan = () => {
   const [showForm, setShowForm] = useState(false);
@@ -26,11 +28,12 @@ const MortgageLoan = () => {
       {/* Hero Section */}
       <header className="text-black">
         <motion.div
-          className="container mx-auto px-6 py-16 text-center"
+          className="container mx-auto px-6 py-16 text-center flex gap-2 justify-center items-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-        >
+        > 
+        <HiOutlineDocumentCurrencyRupee size={70} className="bg-green-100 p-3 rounded-xl"/>
           <h1 className="text-5xl font-bold mb-4">Mortgage Loan Services</h1>
          
         </motion.div>
@@ -38,9 +41,7 @@ const MortgageLoan = () => {
 
       {/* Content Section */}
      <main className="container mx-auto px-6 py-10 shadow-lg rounded-lg bg-white">
-  <h2 className="text-3xl font-semibold text-center mt-4">
-    Why Choose <span className="text-green-700">MehaaFinserv</span> Mortgage Loans?
-  </h2>
+  
   
   {/* Content Section */}
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border border-gray-300 rounded-lg p-8 shadow-lg mt-8">
@@ -51,6 +52,9 @@ const MortgageLoan = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
     >
+      <h2 className="text-3xl font-semibold text-left mt-4">
+    Why Choose <span className="text-green-700">MehaaFinserv</span> Mortgage Loans?
+  </h2>
       <ul className="list-disc pl-5 space-y-4 text-gray-700">
         <li>Competitive interest rates tailored to your needs.</li>
         <li>Flexible repayment options for long-term affordability.</li>
@@ -70,7 +74,7 @@ const MortgageLoan = () => {
       transition={{ duration: 0.8 }}
     >
       <Image
-        src="/images/mortgage-loan.jpg"
+        src="/images/mortgage loan.jpg"
         alt="Mortagage Loan Services"
         width={500}
         height={400}

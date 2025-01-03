@@ -6,6 +6,9 @@ import LoanApplicationForm from "@/app/components/LoanForm";
 import NavBar from "@/app/components/common/Navbar";
 import Whyus from "@/app/components/Whyus";
 import Footer from "@/app/components/common/Footer";
+import { FaCar } from "react-icons/fa6";
+
+
 
 const VehicleLoan = () => {
   const [showForm, setShowForm] = useState(false);
@@ -26,11 +29,12 @@ const VehicleLoan = () => {
       {/* Hero Section */}
       <header className="text-black">
         <motion.div
-          className="container mx-auto px-6 py-16 text-center"
+          className="container mx-auto px-6 py-16 text-center flex gap-2 justify-center items-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <FaCar size={70} className="bg-blue-100 p-3 rounded-xl"/>
           <h1 className="text-5xl font-bold mb-4">Vehicle Loan Services</h1>
          
         </motion.div>
@@ -38,9 +42,7 @@ const VehicleLoan = () => {
 
       {/* Content Section */}
      <main className="container mx-auto px-6 py-10 shadow-lg rounded-lg bg-white">
-  <h2 className="text-3xl font-semibold text-center mt-4">
-    Why Choose <span className="text-green-700">MehaaFinserv</span> Vehicle Loans?
-  </h2>
+  
   
   {/* Content Section */}
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border border-gray-300 rounded-lg p-8 shadow-lg mt-8">
@@ -51,6 +53,9 @@ const VehicleLoan = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
     >
+      <h2 className="text-3xl font-semibold text-left  mb-4 ">
+    Why Choose <span className="text-green-700">MehaaFinserv</span> Vehicle Loans?
+  </h2>
       <ul className="list-disc pl-5 space-y-4 text-gray-700">
         <li>Low interest rates for both new and used vehicles.</li>
         <li>Flexible repayment terms to suit your budget.</li>
@@ -70,10 +75,10 @@ const VehicleLoan = () => {
       transition={{ duration: 0.8 }}
     >
       <Image
-        src="/images/vehicle-loan.jpg"
+        src="/images/vehicle loan.jpg"
         alt="Vehicle Loan Services"
         width={500}
-        height={400}
+        height={200}
         className="rounded-lg shadow-lg"
       />
     </motion.div>
