@@ -17,25 +17,11 @@ const AboutComponent: React.FC = () => {
 
             <div className="w-full flex-col justify-start lg:items-start items-center gap-4 flex">
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-                At <b>Mehaa-Finserv</b>, we are dedicated to providing
-                comprehensive financial solutions to individuals and businesses.
-                Our core offerings include Home Loans, Vehicle Loans, Business
-                Loans, Mortgage Loans, Machinery Loans, Personal Loans, and
-                Education Loans. With a team of experienced financial experts,
-                we are committed to delivering customized loan solutions that
-                cater to the diverse needs of our clients. Whether you are
-                seeking to purchase a home, finance your business, or invest in
-                education, Esha Technology ensures that you receive competitive
-                rates, flexible terms, and the highest level of service
-                throughout the loan process. Our goal is to empower you with the
-                financial resources you need to achieve your aspirations, backed
-                by our unwavering commitment to excellence and customer
-                satisfaction.
+              At <b>Mehaa-Finserv</b>, we are dedicated to providing comprehensive financial solutions to individuals and businesses. Our core offerings include Home Loans, Vehicle Loans, Business Loans, Mortgage Loans, Machinery Loans, Personal Loans, and Education Loans. With a team of experienced financial experts, we are committed to delivering customized loan solutions that cater to the diverse needs of our clients. Whether you are seeking to purchase a home, finance your business, or invest in education, Mehaa-Finserv ensures that you receive competitive rates, flexible terms, and the highest level of service throughout the loan process. Our goal is to empower you with the financial resources you need to achieve your aspirations, backed by our unwavering commitment to excellence and customer satisfaction.
               </p>
 
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-                With Esha Technology, you gain a dedicated team committed to
-                driving your business forward.
+               With Mehaa-Finserv, you gain a dedicated team committed to driving your financial success.
               </p>
             </div>
             <div></div>

@@ -32,9 +32,9 @@
  /* CSS */
 .footer-logo .logo-wrapper {
   position: relative;
-  background-color: white;  /* White background */
+  /* background-color: white;  White background */
   padding: 10px;            /* Add padding to give the outline effect */
-  border: 3px solid #000;  /* Black border */
+  /* border: 3px solid #000;  Black border */
   border-radius: 8px;      /* Optional: rounded corners */
   display: inline-block;
   width: 100%;
