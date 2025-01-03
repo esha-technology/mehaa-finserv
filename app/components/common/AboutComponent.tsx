@@ -12,7 +12,7 @@ const AboutComponent: React.FC = () => {
           <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
             <div className="lg:mx-0 mx-auto h-full rounded-3xl overflow-hidden">
               <Image
-                src="/images/mehaa-about-us.jpg" // Make sure the image is in the "public/images" folder
+                src="mehaa-about-us.jpg" // Make sure the image is in the "public/images" folder
                 alt="About Us Image"
                 width={500} // Adjust width as needed
                 height={500} // Adjust height as needed
