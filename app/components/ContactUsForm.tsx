@@ -72,16 +72,16 @@ const ContactUs: React.FC = () => {
           <h4 className="contact-heading text-2xl font-bold mt-8 py-3">Email</h4>
           <p className="flex items-center">
             <FaEnvelope className="contact-icon text-xl mr-2" />
-            <a href="mailto:eshatechnologyprvtltd@gmail.com" className="contact-link text-lg text-green-600">
-              eshatechnologyprvtltd@gmail.com
+            <a href="mailto:mehaafinserv@gmail.com" className="contact-link text-lg text-green-600">
+              mehaafinserv@gmail.com
             </a>
           </p>
 
           <h4 className="contact-heading text-2xl font-bold mt-8 py-3">Mobile</h4>
           <p className="flex items-center">
             <FaPhone className="contact-icon text-xl mr-2" />
-            <a href="tel:+918523811173" className="contact-link text-lg text-green-600">
-              +91 8523811173
+            <a href="tel:+919848197223" className="contact-link text-lg text-green-600">
+              +91 9848197223
             </a>
           </p>
         </div>
@@ -92,17 +92,17 @@ const ContactUs: React.FC = () => {
           <ul className="social-media flex gap-6 mt-4">
             <li>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-media-link">
-                <FaFacebook className="social-icon text-2xl text-black hover:text-blue-500 hover:scale-110 transform transition-all duration-300" />
+                <FaFacebook className="social-icon text-3xl text-blue-500 hover:scale-110 transform transition-all duration-300" />
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-media-link">
-                <FaInstagram className="social-icon text-2xl text-black hover:text-pink-500 hover:scale-110 transform transition-all duration-300" />
+                <FaInstagram className="social-icon text-3xl text-pink-500 hover:scale-110 transform transition-all duration-300" />
               </a>
             </li>
             <li>
               <a href="https://wa.me" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-media-link">
-                <FaWhatsapp className="social-icon text-2xl text-black hover:text-green-500 hover:scale-110 transform transition-all duration-300" />
+                <FaWhatsapp className="social-icon text-3xl text-green-500 hover:scale-110 transform transition-all duration-300" />
               </a>
             </li>
           </ul>

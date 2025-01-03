@@ -10,7 +10,7 @@ interface CustomerReviewCardProps {
 
 const Ourofferscard: React.FC<CustomerReviewCardProps> = ({ name, comment, profileImg }) => {
   return (
-    <section className="relative lg:m-14 m-4 border">
+    <section className="relative lg:m-14 m-4 ">
       <div className="lg:p-12 p-6 rounded-3xl bg-white shadow-xl border border-gray-200 max-xl:max-w-2xl max-xl:mx-auto">
         <div className="flex sm:items-center flex-col sm:flex-row justify-between gap-5 mb-6">
           <div className="flex items-center gap-3">
